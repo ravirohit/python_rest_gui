@@ -1,0 +1,35 @@
+-> command to create a local virtual environment our application basis:
+    #python -m venv env
+    # change the environment first using;
+    ctrl + shift + p -> select interpreter -> select the enterpreter for the environment created "env"
+-> command to install flask:
+    #pip install flask
+-> create a app.py file in the home app directory like created here and run the below command and application will run
+    http://127.0.0.1:5000/
+    # python -m flask run
+================= create a full stack set up =================
+-> install python 
+-> Install “pip” package(It is similar to “npm” or “NuGet” for Python packages)).
+-> It is similar to “npm” or “NuGet” for Python packages)
+-> Install flask — `pip install Flask`
+->  Install flask helper packages — ` pip install flask flask-jsonpify flask-sqlalchemy flask-restful`
+-> npm install -g @angular/cli
+
+
+------------------- Python REST related changes -----------------
+-> The return type must be a string, tuple, Response instance, or WSGI callable, but it was a dict.
+   so we can't return like as this is dist type: 
+        t = {
+             'status':'operation done successfully'
+         }
+    right approach is: jsonify(t)
+
+
+========================== Q&A ==============
+Q) If you run server and client applications, you shall get CORS error while calling from client?
+Ans: Ideal solution is to server Angular from Python so that it won’t throw CORS error (that’s what MEAN stack is, isn’t it?). 
+   But for simplicity of this article, we shall skip CORS error.
+   -> How to skip CORS error:
+     1. Install CORS packages -`pip install -U flask-cors`
+     2. Once installed, just call CORS(app) function and you will not see that error again.
+Q) Follow up question with prev. we can skip the CORS error. but how actually run angular code on python environment?
